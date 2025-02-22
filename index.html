@@ -48,6 +48,18 @@
             justify-content: center;
             z-index: 999;
         }
+        .social-icons {
+            margin-top: 30px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 30px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ff416c;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +78,11 @@
         </div>
     </div>
     
+    <div class="social-icons">
+        <a href="https://github.com/Ivanharry203" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://github.com/Ivanharry203" target="_blank"><i class="bi bi-medium"></i></a>
+    </div>
+    
     <script>
         // Hilangkan loading screen setelah 2 detik
         window.onload = function() {
@@ -74,5 +91,6 @@
             }, 2000);
         };
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </body>
 </html>
