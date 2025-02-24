@@ -6,6 +6,8 @@
     <title>Tugas Semester 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -22,8 +24,10 @@
 
         .book-container {
             position: relative;
-            width: 400px;
-            height: 550px;
+            width: 90%;
+            max-width: 400px;
+            height: 70vh;
+            max-height: 550px;
             perspective: 1500px;
         }
 
@@ -43,6 +47,7 @@
             text-align: center;
             transform-origin: top;
             transition: transform 0.8s ease-in-out;
+            overflow-y: auto;
         }
 
         .flipped {
@@ -51,27 +56,26 @@
         }
 
         .nav-button {
-            position: fixed;
-            width: 0;
-            height: 0;
-            border-style: solid;
+            position: absolute;
+            width: 30px;
+            height: 30px;
             cursor: pointer;
         }
 
         .nav-left {
-            left: 5px; 
+            left: 10px; 
             top: 90%;
-            transform: translateY(-50%);
-            border-width: 20px 30px 20px 0;
-            border-color: transparent rgb(251, 255, 0) transparent transparent;
+            border-left: 15px solid yellow;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
         }
 
         .nav-right {
-            right: 5px; 
+            right: 10px; 
             top: 90%;
-            transform: translateY(-50%);
-            border-width: 20px 0 20px 30px;
-            border-color: transparent transparent transparent rgb(251, 255, 0);
+            border-right: 15px solid yellow;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
         }
 
         .home-button {
@@ -88,14 +92,35 @@
             justify-content: center;
             text-decoration: none;
             font-size: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .book-container {
+                height: 60vh;
+                max-height: 500px;
+            }
+
+            .page {
+                padding: 15px;
+            }
+
+            .nav-button {
+                width: 20px;
+                height: 20px;
+            }
+
+            .home-button {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="index.html" class="home-button">&#8962;</a>
+    <a href="index.html" class="home-button"><i class="bi bi-house"></i></a>
     <div class="book-container">
-        <div class="page" id="cover">Tugas Semester Ini</div>
+        <div class="page" id="cover">Tugas Semester 3 2025</div>
         <div class="page flipped" id="week1">
             <h4>Week 1</h4>
             <p><strong> Analisis kebutuhan data sistem pemesanan online </strong></p>
@@ -118,10 +143,9 @@
         </div>
     </div>
 
-    <!-- Tombol navigasi -->
     <div class="nav-button nav-left" onclick="prevPage()"></div>
     <div class="nav-button nav-right" onclick="nextPage()"></div>
-    
+
     <script>
         let currentPage = 0;
         const pages = document.querySelectorAll(".page");
