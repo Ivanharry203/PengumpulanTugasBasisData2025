@@ -3,50 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengumpulan Tugas Basis Data TIF 2025</title>
+    <title>Form Pengumpulan Tugas Basis Data 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f1de;
+            background-color: #fff;
+            color: #000;
             text-align: center;
             padding-top: 50px;
+            transition: background 0.3s, color 0.3s;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ff512f, #dd2476);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
+        .dark-mode {
+            background-color: #000;
+            color: #fff;
         }
         .custom-btn {
-            padding: 15px 30px;
-            font-size: 18px;
+            width: 140px;
+            height: 120px;
+            font-size: 14px;
             border: none;
             color: white;
-            border-radius: 50px;
-            background: #ff6363;
+            border-radius: 25px;
+            background: #000;
             transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+        }
+        .custom-btn i {
+            font-size: 28px;
+            margin-bottom: 5px;
         }
         .custom-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(255, 99, 99, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
-        .animated-btn:active {
-            transform: scale(0.95);
+        .dark-mode .custom-btn {
+            background: #fff;
+            color: #000;
         }
-        #loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #000;
+        }
+        .dark-mode .toggle-btn {
+            color: #fff;
         }
         .social-icons {
             margin-top: 30px;
@@ -54,41 +69,63 @@
         .social-icons a {
             margin: 0 10px;
             font-size: 30px;
-            color: #333;
+            color: #000;
             transition: color 0.3s;
         }
+        .dark-mode .social-icons a {
+            color: #fff;
+        }
         .social-icons a:hover {
-            color: #ff6363;
+            color: #eeff00;
+        }
+        .dark-mode .custom-btn:hover {
+            background: yellow;
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
     
     <div class="container mt-5">
-        <h1 class="mb-4 text-gradient">Pengumpulan Tugas Basis Data TIF 2025</h1>
-        <div class="d-flex flex-column gap-3 align-items-center">
-            <a href="https://forms.gle/mXYfiZSeioWiNWZx8" class="btn custom-btn animated-btn">Form Pengumpulan Asdos</a>
-            <a href="https://docs.google.com/forms/d/1eoU723pOJI8m6vm4a7DVBseUglWGwmoUI1UmU4U25dI/preview" class="btn custom-btn animated-btn">Form Pengumpulan Dosen</a>
+        <h1 class="mb-4">Form Pengumpulan Tugas Basis Data 2025</h1>
+        <div class="row justify-content-center gap-2">
+            <div class="col-4 col-md-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLKI4nrFgTlVZbcTQHD-rn3hX1wrnAe39HSta7ixyRS9a_tQ/viewform" class="btn custom-btn">
+                    <i class="bi bi-person-check"></i>  Pengumpulan ke Asdos
+                </a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="https://docs.google.com/forms/d/1eoU723pOJI8m6vm4a7DVBseUglWGwmoUI1UmU4U25dI/preview" class="btn custom-btn">
+                    <i class="bi bi-person-badge"></i> Pengumpulan ke Dosen
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center gap-2 mt-3">
+            <div class="col-4 col-md-2">
+                <a href="tugas.html" class="btn custom-btn">
+                    <i class="bi bi-list-task"></i> Daftar Tugas
+                </a>
+            </div>
+            <div class="col-4 col-md-2">
+                <a href="belajar.html" class="btn custom-btn">
+                    <i class="bi bi-book"></i> Belajar
+                </a>
+            </div>
         </div>
     </div>
     
     <div class="social-icons">
-        <a href="https://github.com/Ivanharry203" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://medium.com/@ivanharry203" target="_blank"><i class="bi bi-medium"></i></a>
+        <a href="https://github.com/username" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://medium.com/@username" target="_blank"><i class="bi bi-medium"></i></a>
     </div>
     
     <script>
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById('loading-screen').style.display = 'none';
-            }, 2000);
-        };
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            let btn = document.querySelector('.toggle-btn');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        }
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </body>
 </html>
